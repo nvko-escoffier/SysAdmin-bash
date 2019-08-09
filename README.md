@@ -1,1 +1,1 @@
-Sets of bash script for daily SysAdmin tasks
+Set of bash scripts for daily SysAdmin tasks
