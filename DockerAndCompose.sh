@@ -66,7 +66,9 @@ do
 			echo "2"
 			;;
 		"install both")
-			echo "3"
+			#echo "3"
+			dependencies
+			full_ins
 			;;
 		"Quit")
 			break
