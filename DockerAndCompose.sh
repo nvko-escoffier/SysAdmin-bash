@@ -27,7 +27,7 @@ LOGFILE=$WRK_DIR/docker-and-compose.log
 # Functions definition
 dependencies() {
 	apt update
-	apt install apt-transport-https ca-certificates curl gnupg2 software-properties-commonte
+	apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 }
 
 docker_ins() {
@@ -60,13 +60,14 @@ select opt in "${options[@]}"
 do 
 	case $opt in
 		"install docker")
-			echo "1"
+			dependencies
+			docker_ins
 			;;
 		"install compose")
-			echo "2"
+			dependencies
+			compose_ins
 			;;
 		"install both")
-			#echo "3"
 			dependencies
 			full_ins
 			;;
