@@ -26,8 +26,12 @@ LOGFILE=$WRK_DIR/docker-and-compose.log
 
 # Functions definition
 dependencies() {
+	add-apt-repository \
+		   "deb [arch=amd64] https://download.docker.com/linux/debian \
+		    $(lsb_release -cs) \
+		    stable"
 	apt update
-	apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+	apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
 }
 
 docker_ins() {
